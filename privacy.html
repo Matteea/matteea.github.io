@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy &mdash; RepoReel</title>
+<style>
+  :root { color-scheme: dark light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0 auto; padding: 48px 24px 80px; max-width: 46rem;
+    background: #14161a; color: #e8eaed;
+    font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, sans-serif;
+  }
+  h1 { font-size: 1.7rem; margin: 0 0 .1em; letter-spacing: -.02em; }
+  h2 { font-size: 1.05rem; margin: 2.1em 0 .5em; }
+  p, li { color: #c6ccd4; }
+  a { color: #36d8e8; }
+  .date { color: #9aa3af; font-size: .9rem; margin-bottom: 2em; }
+  ul { padding-left: 1.3em; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: .95rem; }
+  th, td { text-align: left; padding: .5em .7em; border-bottom: 1px solid #2b3039;
+           vertical-align: top; }
+  th { color: #9aa3af; font-weight: 600; }
+  footer { margin-top: 3em; padding-top: 1.4em; border-top: 1px solid #2b3039;
+           font-size: .9rem; color: #9aa3af; }
+  footer a { margin-right: 1.2em; }
+  code { background: rgba(255,255,255,.07); padding: .1em .4em; border-radius: 4px;
+         font-size: .9em; }
+</style>
+</head>
+<body>
+
+<h1>Privacy policy</h1>
+<p class="date">Last updated 1 November 2026</p>
+
+<h2>The short version</h2>
+<p>RepoReel is a tool that runs on one person's own computer and publishes to
+that same person's own social accounts. It has no users other than its
+operator, no server, and no database anywhere but that computer. It collects
+no information about anybody.</p>
+
+<h2>Who this covers</h2>
+<p>RepoReel is operated by a single individual for their own channel. There is
+nothing to sign up for, no account to create, and no way for anyone else to use
+it. If you are reading this because you saw one of the videos, nothing here
+collects anything about you: you interacted with a social platform, under that
+platform's own privacy policy, not with us.</p>
+
+<h2>What the software stores, and where</h2>
+<p>Everything stays on the operator's computer. Nothing is transmitted to us,
+because there is no "us" to transmit to &mdash; no hosted service exists.</p>
+
+<table>
+  <tr><th>What</th><th>Where</th><th>Why</th></tr>
+  <tr>
+    <td>Public information about GitHub repositories</td>
+    <td>A local SQLite file</td>
+    <td>To choose which project to make a video about</td>
+  </tr>
+  <tr>
+    <td>Scripts, audio, and rendered videos</td>
+    <td>Local folders</td>
+    <td>They are the work product</td>
+  </tr>
+  <tr>
+    <td>API credentials for the operator's own accounts</td>
+    <td>A local <code>.env</code> file, never committed to version control</td>
+    <td>To publish to those accounts</td>
+  </tr>
+  <tr>
+    <td>A record of what was published where</td>
+    <td>The same local SQLite file</td>
+    <td>So the same video is not posted twice</td>
+  </tr>
+</table>
+
+<h2>Third-party services it talks to</h2>
+<p>All of these are used by the operator, with the operator's own credentials,
+for the operator's own content:</p>
+<ul>
+  <li><strong>GitHub</strong> &mdash; the public API, read-only, to find and
+    read public repositories. No private data is accessed; the token used has
+    no permission scopes at all and exists only to raise the rate limit.</li>
+  <li><strong>Hugging Face</strong> &mdash; to download the text-to-speech
+    model weights, once.</li>
+  <li><strong>Anthropic</strong> &mdash; the Claude Code tool, to draft the
+    video script and the captions.</li>
+  <li><strong>HeyGen / HyperFrames</strong> &mdash; to fetch music, sound
+    effects, images and logos used in the videos, and to render them.</li>
+  <li><strong>YouTube, TikTok and Instagram</strong> &mdash; to upload videos
+    to the operator's own accounts and to post a first comment on them.</li>
+</ul>
+<p>Each of those services handles data under its own privacy policy.</p>
+
+<h2>Platform permissions, and what they are not used for</h2>
+<p>Where RepoReel is granted access to a social account, that access is used
+only to upload a video to that account and to post a comment on that same
+video. It is not used to read anyone's content, to follow or message anyone, to
+collect audience information, or to act on any account other than the
+operator's own.</p>
+<p>Access tokens are stored only in the local <code>.env</code> file. They can
+be revoked at any time from the platform's own settings, which immediately and
+permanently ends RepoReel's access.</p>
+
+<h2>Other people's work</h2>
+<p>The videos explain public open-source projects. Each one credits the
+project's authors, links the repository, and makes clear that it is an
+independent explainer and not official content from that project. Material
+used under a licence that requires attribution is credited in the video's
+pinned comment. If you are the author of a project and want a video about it
+taken down, the contact address below is enough &mdash; no justification
+required.</p>
+
+<h2>Children</h2>
+<p>The channel publishes technical content for software developers and is not
+directed at children. No content is marked as made for kids.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the date at the top changes with it.</p>
+
+<h2>Contact</h2>
+<p>Questions, or a request to remove a video: <a href="mailto:matticarletti.2000@gmail.com">matticarletti.2000@gmail.com</a></p>
+
+<footer>
+  <a href="index.html">Home</a>
+  <a href="terms.html">Terms</a>
+</footer>
+
+</body>
+</html>
